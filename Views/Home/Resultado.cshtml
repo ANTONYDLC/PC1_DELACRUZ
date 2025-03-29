@@ -1,0 +1,28 @@
+@model CasaCambio.Models.CambioModel
+@{
+    ViewData["Title"] = "Resultado del Cambio";
+}
+
+<h2 class="text-center">Resultado del Cambio</h2>
+<p>Cantidad: @Model.Cantidad @Model.MonedaOrigen</p>
+<p>Recibirás: @Model.Resultado @Model.MonedaDestino</p>
+
+<form method="get" asp-action="Boleta">
+    <input type="hidden" name="cantidad" value="@Model.Cantidad" />
+    <input type="hidden" name="monedaOrigen" value="@Model.MonedaOrigen" />
+    <input type="hidden" name="resultado" value="@Model.Resultado" />
+    <input type="hidden" name="monedaDestino" value="@Model.MonedaDestino" />
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" name="nombre" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Documento</label>
+        <input type="text" name="documento" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Generar Boleta</button>
+</form>

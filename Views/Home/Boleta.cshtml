@@ -1,0 +1,12 @@
+@model CasaCambio.Models.BoletaModel
+@{
+    ViewData["Title"] = "Boleta de Cambio";
+}
+
+<h2 class="text-center">Boleta de Cambio</h2>
+<p><strong>Nombre:</strong> @Model.Nombre</p>
+<p><strong>Email:</strong> @Model.Email</p>
+<p><strong>Documento:</strong> @Model.Documento</p>
+<p><strong>Cantidad:</strong> @Model.Cantidad @Model.MonedaOrigen</p>
+<p><strong>Recibirá:</strong> @Model.Resultado @Model.MonedaDestino</p>
+<a href="/Cambio/Index" class="btn btn-secondary">Volver</a>

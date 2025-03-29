@@ -1,8 +1,27 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model CasaCambio.Models.CambioModel
+@{
+    ViewData["Title"] = "Cambio de Moneda";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2 class="text-center">Casa de Cambio Online</h2>
+<form method="post" asp-action="CalcularCambio">
+    <div class="mb-3">
+        <label class="form-label">Cantidad</label>
+        <input type="number" asp-for="Cantidad" class="form-control" required />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Moneda de Origen</label>
+        <select asp-for="MonedaOrigen" class="form-select">
+            <option value="BRL">Real Brasileño (BRL)</option>
+            <option value="PEN">Sol Peruano (PEN)</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Moneda de Destino</label>
+        <select asp-for="MonedaDestino" class="form-select">
+            <option value="PEN">Sol Peruano (PEN)</option>
+            <option value="BRL">Real Brasileño (BRL)</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Hacer Cambio</button>
+</form>
